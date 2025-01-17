@@ -1,12 +1,12 @@
 === ShortBuild ===
-Contributors: Managethemes
-Tags: plugin, demo, home page, portfolio, projects, testimonial, callout
-Requires at least: 3.8
-Tested up to: 6.3
-Stable tag: 1.6.13
+Contributors: Managethemes, themeansar
+Tags: home page, portfolio, testimonial, callout
+Requires at least: 4.5
+Tested up to: 7.4
+Stable tag: 1.6.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+ShortBuild Beautiful ready-made Business Templates
 == Description ==
 ShortBuild, adds extra options for customizing home page of the Short Theme.
 
@@ -20,6 +20,9 @@ The ShortBuild plugin features include:
 
 
 == Changelog ==
+= 1.6.14 =
+* Fixed compitable issue.
+
 = 1.6.11 =
 
 * Fixed compitable issue.

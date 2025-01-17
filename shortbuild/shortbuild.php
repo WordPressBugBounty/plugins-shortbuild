@@ -3,11 +3,11 @@
  * Plugin Name:       ShortBuild
  * Plugin URI:        
  * Description:       Shortbuild plugin is comptible for Themeansar themes.
- * Version:           1.6.13
- * Author:            managethemes
- * Author URI:        https://managethemes.com
+ * Version:           1.6.14
+ * Author:            managethemes, themeansar
+ * Author URI:        https://themeansar.com
   * License:           GPL-2.0+
- * Tested up to: 	  6.3
+ * Tested up to: 	  6.7
  * Requires: 		  4.6 or higher
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       shortbuild
@@ -20,7 +20,7 @@ define( 'SBP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
 define( 'SBP_PLUGIN_PLUGIN_NAME', 'shortbuild' );
-define( 'SBP_PLUGIN_VERSION', '1.6.13' );
+define( 'SBP_PLUGIN_VERSION', '1.6.14' );
 define( 'SBP_PLUGIN_TEMPLATE_URL', SBP_PLUGIN_URL.'inc/demo/' );
 
 require SBP_PLUGIN_DIR . 'inc/init.php';
