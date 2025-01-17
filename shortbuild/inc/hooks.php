@@ -23,38 +23,30 @@
         }
     }
 
-   public function get_theme_mods()
-{
-    $theme_slug = get_option('stylesheet');
-    $mods = get_option("theme_mods_$theme_slug");
-    if (false === $mods)
-    {
-        $theme_name = get_option('current_theme');
-        if (false === $theme_name)
-            $theme_name = wp_get_theme()->get('Name');
-        $mods = get_option("mods_$theme_name"); // Deprecated location.
-        if (is_admin() && false !== $mods)
-        {
-            update_option("theme_mods_$theme_slug", $mods);
-            delete_option("mods_$theme_name");
+    public function get_theme_mods() {
+        $theme_slug = get_option('stylesheet');
+        $mods = get_option("theme_mods_$theme_slug");
+        if (false === $mods) {
+            $theme_name = get_option('current_theme');
+            if (false === $theme_name)
+                $theme_name = wp_get_theme()->get('Name');
+            $mods = get_option("mods_$theme_name"); // Deprecated location.
+            if (is_admin() && false !== $mods) {
+                update_option("theme_mods_$theme_slug", $mods);
+                delete_option("mods_$theme_name");
+            }
         }
+
+        return $mods;
     }
 
-    return $mods;
-}
-
-
-
-public function set_theme_mod( $name, $value ) {
-    $mods = get_theme_mods();
-    $old_value = isset( $mods[ $name ] ) ? $mods[ $name ] : false;
- 
-
-   $mods[ $name ] = apply_filters( "pre_set_theme_mod_{$name}", $value, $old_value );
-
-   $theme = get_option( 'stylesheet' );
-    update_option( "theme_mods_$theme", $mods );
- }
+    public function set_theme_mod( $name, $value ) {
+        $mods = get_theme_mods();
+        $old_value = isset( $mods[ $name ] ) ? $mods[ $name ] : false; 
+        $mods[ $name ] = apply_filters( "pre_set_theme_mod_{$name}", $value, $old_value );
+        $theme = get_option( 'stylesheet' );
+        update_option( "theme_mods_$theme", $mods );
+    }
 
     public function enqueue_styles( $hook_suffix ) {
         if ( !is_array($this->hook_suffix) || !in_array( $hook_suffix, $this->hook_suffix )){
@@ -75,16 +67,17 @@ public function set_theme_mod( $name, $value ) {
         ) );
     }
 
-    public function demo_import_screen() {
-        ?>
+    public function demo_import_screen() { ?>
         <div id="ads-notice">
             <div class="ads-container">
                 <img class="ads-screenshot" src="<?php echo esc_url(shortbuild_bu_get_theme_screenshot() )?>" />
                 <div class="ads-notice">
                     <h2>
-                        <?php
-                        printf(
-                            esc_html__( 'Welcome! Thank you for choosing %1$s! To get started with ready-made starter site templates. Install the Advanced Import plugin and install Demo Starter Site within a single click', 'shortbuild' ), '<strong>'. wp_get_theme()->get('Name'). '</strong>');
+                    <?php
+                        // Translators: %s is the name of current theme.
+                        printf( esc_html__( 'Welcome! Thank you for choosing %1$s! To get started with ready-made starter site templates. Install the Advanced Import plugin and install Demo Starter Site within a single click', 'shortbuild' ), 
+                            '<strong>' . wp_kses_post(wp_get_theme()->get('Name')) . '</strong>'
+                        );
                         ?>
                     </h2>
 
@@ -96,8 +89,7 @@ public function set_theme_mod( $name, $value ) {
                 </div>
             </div>
         </div>
-        <?php
-
+        <?php 
     }
 
     public function install_advanced_import() {
@@ -345,10 +337,6 @@ public function set_theme_mod( $name, $value ) {
 
         return array_merge( $replace_term_ids, $term_ids );
     }
-
-
- 
-
 }
 
 /**
