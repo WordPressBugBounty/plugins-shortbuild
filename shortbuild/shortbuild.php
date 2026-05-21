@@ -3,11 +3,11 @@
  * Plugin Name:       ShortBuild
  * Plugin URI:        
  * Description:       Shortbuild plugin is comptible for Themeansar themes.
- * Version:           1.6.15
+ * Version:           1.6.16
  * Author:            themeansar
  * Author URI:        https://themeansar.com
   * License:           GPL-2.0+
- * Tested up to: 	  6.7
+ * Tested up to: 	  7.0
  * Requires: 		  4.6 or higher
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       shortbuild

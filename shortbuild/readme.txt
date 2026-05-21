@@ -3,8 +3,8 @@ Contributors: themeansar
 Tags: home page, portfolio, testimonial, callout
 Requires at least: 5.6
 Requires PHP: 7.4
-Tested up to: 6.7
-Stable tag: 1.6.15
+Tested up to: 7.0
+Stable tag: 1.6.16
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ShortBuild Beautiful ready-made Business Templates
@@ -21,6 +21,9 @@ The ShortBuild plugin features include:
 
 
 == Changelog ==
+= 1.6.16 =
+* Tested WordPress 7.0.
+
 = 1.6.15 =
 * Fixed plugin check issue.
 
